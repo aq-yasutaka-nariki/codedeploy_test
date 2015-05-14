@@ -1,7 +1,13 @@
-#!/bin/bash
-# 
-
+#!/bin/sh
 set -ex
+
+
+export AWS_DEFAULT_REGION="ap-northeast-1"
+
+MYSECURITYGROUP="sg-4a6afa2f"
+MYIP=`curl -s ifconfig.me`
+
+aws ec2 authorize-security-group-ingress --group-id $MYSECURITYGROUP --protocol tcp --port 22 --cidr $MYIP/32
 
 
 ssh 52.68.225.208 << EOF
@@ -29,3 +35,6 @@ rake unicorn:start
 exit 0
 
 EOF
+
+
+aws ec2 revoke-security-group-ingress --group-id $MYSECURITYGROUP --protocol tcp --port 22 --cidr $MYIP/32
