@@ -1,7 +1,7 @@
 rails_root = File.expand_path('../../', __FILE__)
 
 # 子プロセスいくつ立ち上げるか
-worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3) 
+worker_processes Integer(ENV["WEB_CONCURRENCY"] || 1) 
 # Set the working directory of this unicorn instance.
 working_directory "#{rails_root}/"
 
