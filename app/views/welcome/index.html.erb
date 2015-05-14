@@ -1,3 +1,11 @@
 <h1>It works</h1>
 <p>env:<%= Rails.env %></p>
-<p><%= "sample" %><%= image_tag 'sample.png' %></p>
+<p><%= "sample" %><br><%= image_tag 'sample.png' %></p>
+
+<p>user</p>
+<ul>
+  <% @users.each do |user| %>
+  <li><%= user.name %></li>
+  <% end %>
+</ul>
+
