@@ -6,6 +6,7 @@ export AWS_DEFAULT_REGION="ap-northeast-1"
 
 MYSECURITYGROUP="sg-4a6afa2f"
 MYIP=`curl -s ifconfig.me`
+echo $MYIP
 
 aws ec2 authorize-security-group-ingress --group-id $MYSECURITYGROUP --protocol tcp --port 22 --cidr $MYIP/32
 
