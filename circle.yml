@@ -1,0 +1,9 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  ruby:
+    version: 2.1.5
+
+checkout:
+  post:
+    - cp config/secrets.yml.sample config/secrets.yml
