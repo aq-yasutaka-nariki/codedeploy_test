@@ -38,3 +38,33 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+gem 'dotenv-rails'
+
+
+group :development, :test do
+  # gem 'sqlite3'
+  gem 'rspec-rails'
+  # gem 'guard-rspec'
+  # gem 'rb-fsevent' # gem 'rb-fsevent' if `uname` =~ /Darwin/
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'json_expressions'
+  gem 'timecop'
+  # gem 'json_spec'
+#   gem 'email_spec'
+  gem 'simplecov', :require => false, :group => :test
+#   gem 'simplecov-rcov'
+#   gem 'capybara'
+#   gem 'poltergeist'
+  # gem 'erd'
+  # gem 'annotate'
+  # gem 'hirb'
+  # gem 'hirb-unicode'
+  gem 'awesome_print'
+  gem 'quiet_assets'
+  # gem 'ffaker'
+  # gem 'timecop'
+end
