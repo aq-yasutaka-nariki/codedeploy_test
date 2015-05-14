@@ -1,7 +1,6 @@
 #!/bin/sh
 set -ex
 
-
 export AWS_DEFAULT_REGION="ap-northeast-1"
 
 MYSECURITYGROUP="sg-4a6afa2f"
@@ -11,7 +10,7 @@ echo $MYIP
 aws ec2 authorize-security-group-ingress --group-id $MYSECURITYGROUP --protocol tcp --port 22 --cidr $MYIP/32
 
 
-ssh -t -t 52.68.225.208 << EOF
+ssh -t -t -A 52.68.225.208 << EOF
 
 source ~/.bash_profile
 
